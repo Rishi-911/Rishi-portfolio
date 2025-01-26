@@ -7,6 +7,7 @@
 
 html{
     scroll-behavior: smooth; 
+    width: fit-content;
 }
 body{
     color: #ededed;
@@ -15,13 +16,12 @@ body{
 /* ===================== NAVBAR ==================== */
 .navbar{
     display: flex;
-    background:transparent;
+    background:transparent; 
     justify-content: space-around;
     position: sticky;
     background-color:#003153 ;
     top: 0;
     left: 0;
-    width: 100%;
     align-items: center;
     padding: 20px 10%;
     z-index: 100;
@@ -91,7 +91,6 @@ body{
     padding: 70px 10% 0;
 }
 .home-content {
-    /* line-height: 50px; */
     opacity: 0;
     transform: translateY(-50px); 
     transition: opacity 1s ease-out, transform 1s ease-out; 
@@ -617,11 +616,31 @@ p{
 }
 
 
-@media (max-width: 1200px) {
-    .navbar {
-        padding: 20px 5%;
-    }
+@media (max-width: 1024px) {
 
+    .navbar{
+        display: flex;
+        position: static;
+        align-items: center;
+    }
+    .logo-link{
+        text-decoration: none;
+        font-size: 35px;
+        position: relative;
+        color: white;
+        font-weight: 600;
+        cursor: default;
+        opacity: 0;
+        animation: slideRight 0.5s ease forwards;
+    }
+    .right-nav a{
+        text-decoration: none;
+        transition: .3s;
+        color: white;
+        font-size: 28px;
+        font-weight: 600;
+        margin-left: 9px;
+    }
     .home {
         padding: 70px 5% 0;
     }
@@ -666,8 +685,9 @@ p{
 
     .service-content {
         margin-left: 0;
-        width: 100%;
-        margin: 20px 0;
+        width: 80%;
+        margin-left: 60px;
+        justify-content: center;
     }
 
     #services {
@@ -691,6 +711,7 @@ p{
     #Contact {
         grid-template-columns: 1fr;
         padding-left: 10px;
+        padding-right: 10px;
     }
 
     .contact-text h2 {
@@ -753,13 +774,40 @@ p{
 
 /* Mobile Landscape */
 @media (max-width: 480px) {
-    .navbar {
-        padding: 10px;
+    .navbar{
+        display: flex;
+        position: static;
+        width: 100vh;
+    }
+    .logo-link{
+        text-decoration: none;
+        font-size: 35px;
+        position: relative;
+        color: white;
+        font-weight: 600;
+        cursor: default;
+        opacity: 0;
+        animation: slideRight 0.5s ease forwards;
+    }
+    
+    .right-nav a{
+        text-decoration: none;
+        transition: .3s;
+        color: white;
+        margin-top: 10px;
+        font-size: 23px;
+        font-weight: 600;
+        margin-left: 9px;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+    }
+    .home{
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+        text-align: center;
     }
 
-    .home {
-        padding: 40px 10%;
-    }
 
     h1 {
         font-size: 32px;
@@ -777,7 +825,14 @@ p{
         width: 250px;
         height: 250px;
     }
-
+#about{
+    flex-direction: column;
+    height: 100vh;
+    padding: 0px;
+}
+.about-content{
+    text-align: center;
+}
     .about-img {
         width: 250px;
         height: 250px;
@@ -788,11 +843,6 @@ p{
         height: 35px;
         font-size: 18px;
     }
-
-    .title h2 {
-        font-size: 35px;
-    }
-
     .contact-text h2 {
         font-size: 30px;
     }
@@ -800,6 +850,10 @@ p{
     .contact-text h4,
     .contact-text p {
         font-size: 14px;
+    }
+    .bars{
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 
